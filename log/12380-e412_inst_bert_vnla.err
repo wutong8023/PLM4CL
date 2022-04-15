@@ -1,0 +1,32 @@
+Traceback (most recent call last):
+  File "/cm/local/apps/python3/lib/python3.7/runpy.py", line 193, in _run_module_as_main
+    "__main__", mod_spec)
+  File "/cm/local/apps/python3/lib/python3.7/runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "/home/tongwu/workplace/pseudoCL/utils/main.py", line 97, in <module>
+    main()
+  File "/home/tongwu/workplace/pseudoCL/utils/main.py", line 67, in main
+    dataset = get_dataset(args)
+  File "/home/tongwu/workplace/pseudoCL/datasets/__init__.py", line 49, in get_dataset
+    return NAMES[args.dataset](args)
+  File "/home/tongwu/workplace/pseudoCL/datasets/utils/continual_dataset.py", line 44, in __init__
+    self.N_TASKS = self.get_n_tasks()
+  File "/home/tongwu/workplace/pseudoCL/datasets/webred.py", line 106, in get_n_tasks
+    self.dataset = WEBRED(ptm=self.args.ptm, filter_rate=self.args.filter_rate)
+  File "/home/tongwu/workplace/pseudoCL/datasets/webred.py", line 46, in __init__
+    download_file(self.webred_id, destination_dir=base_path(), file_name="webred")
+  File "/home/tongwu/workplace/pseudoCL/datasets/utils/download_googledrive.py", line 48, in download_file_from_google_drive
+    zipped_file.extractall(destination_dir)
+  File "/cm/local/apps/python3/lib/python3.7/zipfile.py", line 1636, in extractall
+    self._extract_member(zipinfo, path, pwd)
+  File "/cm/local/apps/python3/lib/python3.7/zipfile.py", line 1691, in _extract_member
+    shutil.copyfileobj(source, target)
+  File "/cm/local/apps/python3/lib/python3.7/shutil.py", line 79, in copyfileobj
+    buf = fsrc.read(length)
+  File "/cm/local/apps/python3/lib/python3.7/zipfile.py", line 930, in read
+    data = self._read1(n)
+  File "/cm/local/apps/python3/lib/python3.7/zipfile.py", line 1020, in _read1
+    self._update_crc(data)
+  File "/cm/local/apps/python3/lib/python3.7/zipfile.py", line 948, in _update_crc
+    raise BadZipFile("Bad CRC-32 for file %r" % self.name)
+zipfile.BadZipFile: Bad CRC-32 for file 'webred/webred_21.json'
